@@ -1,0 +1,67 @@
+# mdbook 构建输出
+book/
+dist/
+
+# 临时文件
+*.tmp
+*.temp
+.DS_Store
+Thumbs.db
+
+# 编辑器和 IDE
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
+*~
+
+# 操作系统
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Rust
+target/
+Cargo.lock
+**/*.rs.bk
+
+# WASM 编译输出
+*.wasm
+pkg/
+
+# 示例编译文件
+examples/compiled/
+
+# 缓存和日志
+*.log
+.cache/
+
+# 环境和配置
+.env
+.env.local
+.env.*.local
+
+# 备份文件
+*.bak
+*.backup
+
+# 其他
+*.orig
+*.rej
+
+# direnv
+.direnv/
+
+# Nix
+result
+result-*

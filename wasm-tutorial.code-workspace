@@ -1,0 +1,108 @@
+{
+    "folders": [
+        {
+            "name": "WebAssembly 教程",
+            "path": "."
+        }
+    ],
+    "settings": {
+        "files.associations": {
+            "*.wat": "wasm",
+            "*.wast": "wasm",
+            "justfile": "makefile"
+        },
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true,
+        "editor.formatOnSave": true,
+        "rust-analyzer.cargo.allFeatures": true,
+        "rust-analyzer.checkOnSave.command": "clippy",
+        "markdown.preview.doubleClickToSwitchToEditor": false,
+        "markdown.preview.markEditorSelection": true,
+        "liveServer.settings.port": 8080,
+        "liveServer.settings.CustomBrowser": "chrome",
+        "terminal.integrated.shell.linux": "/bin/bash",
+        "terminal.integrated.env.linux": {
+            "RUST_BACKTRACE": "1"
+        }
+    },
+    "extensions": {
+        "recommendations": [
+            "ms-vscode.vscode-wasm",
+            "rust-lang.rust-analyzer",
+            "ms-vscode.cpptools",
+            "ritwickdey.liveserver",
+            "yzhang.markdown-all-in-one",
+            "shd101wyy.markdown-preview-enhanced",
+            "skellock.just",
+            "jnoortheen.nix-ide",
+            "mkhl.direnv"
+        ]
+    },
+    "tasks": {
+        "version": "2.0.0",
+        "tasks": [
+            {
+                "label": "Build Tutorial",
+                "type": "shell",
+                "command": "just",
+                "args": ["build"],
+                "group": "build",
+                "presentation": {
+                    "echo": true,
+                    "reveal": "always",
+                    "panel": "new"
+                },
+                "problemMatcher": []
+            },
+            {
+                "label": "Start Dev Server",
+                "type": "shell",
+                "command": "just",
+                "args": ["dev"],
+                "group": "build",
+                "isBackground": true,
+                "presentation": {
+                    "echo": true,
+                    "reveal": "always",
+                    "panel": "new"
+                },
+                "problemMatcher": []
+            },
+            {
+                "label": "Check WAT Files",
+                "type": "shell",
+                "command": "just",
+                "args": ["check-wat"],
+                "group": "test",
+                "presentation": {
+                    "echo": true,
+                    "reveal": "always"
+                }
+            },
+            {
+                "label": "Run Tests",
+                "type": "shell",
+                "command": "just",
+                "args": ["test"],
+                "group": "test",
+                "presentation": {
+                    "echo": true,
+                    "reveal": "always"
+                }
+            }
+        ]
+    },
+    "launch": {
+        "version": "0.2.0",
+        "configurations": [
+            {
+                "type": "chrome",
+                "request": "launch",
+                "name": "Preview Tutorial",
+                "url": "http://localhost:8080",
+                "webRoot": "${workspaceFolder}/book",
+                "preLaunchTask": "Start Dev Server"
+            }
+        ]
+    }
+}
