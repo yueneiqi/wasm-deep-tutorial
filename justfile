@@ -105,19 +105,6 @@ test-examples:
         wasmtime "$file" || echo "⚠️ $file 运行失败"; \
     done
 
-# 🔄 Git 和版本控制
-
-# 提交当前更改
-commit message:
-    @echo "📝 提交更改: {{message}}"
-    git add .
-    git commit -m "{{message}}"
-
-# 创建新的发布标签
-tag version:
-    @echo "🏷️ 创建标签: {{version}}"
-    git tag -a "{{version}}" -m "Release {{version}}"
-
 # 🎯 快速开始
 
 # 初始化开发环境
